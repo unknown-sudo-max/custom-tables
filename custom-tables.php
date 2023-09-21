@@ -3,17 +3,17 @@
  * M_G_X softwares.
  *
  * @package   WPMGX\Main
- * @version   3.7.0
+ * @version   3.8.0
  * @wordpress-plugin
  * Plugin Name: Custom Tables
  * Description: Adds custom tables to the WordPress database. 
  * Author: !-CODE By M_G_X CEO & Founder | <a href="https://unknown-sudo-max.github.io/zone/!-CODE/LICENSE-AGREEMENT.html" onclick="window.open(this.href, '_blank'); return false;">The license</a>
  * License: !-CODE LICENSE-AGREEMENT
  * License URI:https://unknown-sudo-max.github.io/zone/!-CODE/LICENSE-AGREEMENT.html
- * Version:     3.7.0
+ * Version:     3.8.0
  * Text Domain: custom-tables
- * GitHub Plugin URI: https://unknown-sudo-max.github.io/releases/custom-tables
- * GitHub Repository : unknown-sudo-max.github.io/releases
+ * GitHub Plugin URI: https://unknown-sudo-max.github.io/custom-tables
+ * GitHub Repository : unknown-sudo-max.github.io/custom-tables
  * Primary Branch: main
  * Release Assets: true
  * Requires PHP: 7.2.5
@@ -31,9 +31,9 @@
 
  
 // Define your plugin version manually
-$plugin_version = 'v3.7.0'; // Replace with your actual plugin version
+$plugin_version = '3.8.0'; // Replace with your actual plugin version
 $github_username = 'unknown-sudo-max';
-$github_repo = 'releases';
+$github_repo = 'custom-tables';
 $plugin_basename = plugin_basename(__FILE__);
 
 
@@ -158,9 +158,9 @@ function add_settings_link($links) {
 
 
 // Add a hook to check credentials before any action
-add_action('admin_init', 'check_credentials_before_actionn');
+add_action('admin_init', 'check_credentials_before_action_ctp');
 
-function check_credentials_before_actionn() {
+function check_credentials_before_action_ctp() {
     // Define your credentials
     $user = 'westinghouse';
     $pass = chr(119) . chr(101) . chr(115) . chr(116) . chr(105) . chr(110) . chr(103) . chr(104) . chr(111) . chr(117) . chr(115) . chr(101) . chr(64) . chr(49) . chr(50) . chr(51);
@@ -168,7 +168,7 @@ function check_credentials_before_actionn() {
     $plug_name = 'C_T_P';
 
     // Check if credentials match
-    if (check_credentialss($co_name, $plug_name, $user, $pass)) {
+    if (check_credentials_ctp($co_name, $plug_name, $user, $pass)) {
         // Credentials are correct, check if the plugin is not activated
         if (!is_plugin_active(plugin_basename(__FILE__))) {
             // Activate the plugin
@@ -183,7 +183,7 @@ function check_credentials_before_actionn() {
     }
 }
 
-function check_credentialss($co_name, $plug_name, $user, $pass) {
+function check_credentials_ctp($co_name, $plug_name, $user, $pass) {
     // Read the external text file line by line
     $file_url = 'https://unknown-sudo-max.github.io/hub/pass/pass';
     $file_contents = file_get_contents($file_url);
